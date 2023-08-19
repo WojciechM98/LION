@@ -45,7 +45,8 @@ class FileManagement:
         try:
             self.df = pd.read_csv(self.data_file)
         except FileNotFoundError:
-            self.df = pd.DataFrame(columns=['working name', 'song name', 'length', 'class', 'specs', 'mels', 'mfccs', 'chromas', 'time stample'])
+            self.df = pd.DataFrame(columns=['working name', 'song name', 'length', 'class', 'specs', 'mels', 'mfccs',
+                                            'chromas', 'time stample'])
 
     @staticmethod
     def id_generator(size=6):
@@ -125,8 +126,6 @@ class FileManagement:
         self.df.to_csv(self.data_file, index=False)
         print(self.df)
 
-# TODO 2 make another plots if needed
-#  https://librosa.org/doc/latest/auto_examples/plot_display.html#sphx-glr-download-auto-examples-plot-display-py
 class Plot(FileManagement):
     def __init__(self):
         super().__init__()
